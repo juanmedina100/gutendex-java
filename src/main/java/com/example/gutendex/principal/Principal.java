@@ -62,10 +62,6 @@ public class Principal {
                         ))
 
                 .forEach(System.out::println);
-        System.out.println("****************************************************");
-        System.out.println("Ordenados");
-        datos.libros().stream().map(m->m.autor().stream().sorted(Comparator.comparing(DatosAutor::nombre)))
-                .forEach(System.out::println);
 
     }
 
