@@ -1,15 +1,14 @@
 package com.example.gutendex.principal;
 
 import com.example.gutendex.models.Datos;
-import com.example.gutendex.models.DatosAutor;
 import com.example.gutendex.models.DatosLibros;
 import com.example.gutendex.service.ConsumoAPI;
 import com.example.gutendex.service.ConvierteDatos;
-
-import javax.swing.text.html.Option;
-import java.util.*;
+import java.util.Comparator;
+import java.util.DoubleSummaryStatistics;
+import java.util.Optional;
+import java.util.Scanner;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Principal {
 
@@ -25,7 +24,7 @@ public class Principal {
         //Top 10 libros mas descargados
         datos.libros().stream()
                 .sorted(Comparator.comparing(DatosLibros::numeroDeDescargas).reversed())
-                .limit(3)
+                .limit(10)
                 .map(l->l.numeroDeDescargas()+" - "+l.titulo().toUpperCase())
                 .forEach(System.out::println);
         //Busqueda de libros
